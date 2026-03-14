@@ -9,7 +9,7 @@ using static Microsoft.ApplicationInsights.MetricDimensionNames.TelemetryContext
 namespace MauiApp.UITests
 {
    [TestClass]
-   public class MainPageTests
+   public class WindowsTests
    {
       private const string WinAppDriverUrl = "http://127.0.0.1:4723";
       private const string AppPath = @"D:\GitWare\Apps\Appium\Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Maui.exe";
@@ -82,20 +82,6 @@ namespace MauiApp.UITests
          _session = new WindowsDriver(new Uri(WinAppDriverUrl), options);
       }
 
-
-
-      //[ClassInitialize]
-      //public static void Setup(TestContext context)
-      //{
-      //   var options = new AppiumOptions();
-
-      //   options.PlatformName = "Windows";
-      //   options.AutomationName = "Windows";
-      //   options.App = AppPath;
-
-      //   _session = new WindowsDriver(new Uri(WinAppDriverUrl), options);
-      //}
-
       [ClassCleanup]
       public static void TearDown()
       {
@@ -105,8 +91,8 @@ namespace MauiApp.UITests
       [TestMethod]
       public void CounterButton_IncrementsValue()
       {
-         var button = _session.FindElement(OpenQA.Selenium.Appium.MobileBy.AccessibilityId("CounterBtn"));
-         var label = _session.FindElement(OpenQA.Selenium.Appium.MobileBy.AccessibilityId("CounterLabel"));
+         var button = _session.FindElement(MobileBy.AccessibilityId("CounterBtn"));
+         var label = _session.FindElement(MobileBy.AccessibilityId("CounterLabel"));
 
          button.Click();
          button.Click();
