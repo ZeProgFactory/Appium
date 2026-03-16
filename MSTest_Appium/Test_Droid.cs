@@ -46,7 +46,7 @@ namespace MauiApp.UITests
          options.AutomationName = "UiAutomator2";
 
          // Path to your MAUI .apk
-         options.App = @"C:\Users\zepro\AppData\Local\Xamarin\Mono for Android\Archives\2026-03-16\Maui 3-16-26 11.18 AM.apkarchive\com.companyname.maui.apk";
+         options.App = @"C:\Users\zepro\AppData\Local\Xamarin\Mono for Android\Archives\2026-03-16\Maui 3-16-26 4.15 PM.apkarchive\com.companyname.maui.apk";
          //options.App = @"C:\Users\zepro\AppData\Local\Xamarin\Mono for Android\Archives\2026-03-16\Maui 3-16-26 9.30 AM.apkarchive\com.companyname.maui.apk";
          _driver = new AndroidDriver(new Uri("http://127.0.0.1:4723"), options);
          _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
@@ -62,7 +62,10 @@ namespace MauiApp.UITests
       public void CounterButton_IncrementsValue()
       {
          // Find elements by MAUI AutomationId
-         var button = _driver.FindElement(MobileBy.AccessibilityId("CounterBtn"));
+         // var button = _driver.FindElement(MobileBy.AccessibilityId("CounterBtn"));
+         var list = _driver.FindElements(MobileBy.Id("com.companyname.maui:id/CounterBtn"));
+         var button = _driver.FindElement(MobileBy.Id("com.companyname.maui:id/CounterBtn"));
+
          //var label = _driver.FindElement(MobileBy.AccessibilityId("CounterLabel"));
 
          // Initial state

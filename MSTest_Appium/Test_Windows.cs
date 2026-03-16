@@ -49,6 +49,7 @@ namespace MauiApp.UITests
          {
             StartInfo = new ProcessStartInfo(@"appium")
             {
+               Arguments = "--relaxed-security",
                UseShellExecute = true
             }
          }.Start();
