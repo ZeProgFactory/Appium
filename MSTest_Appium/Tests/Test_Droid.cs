@@ -10,7 +10,8 @@ public class AndroidTests : TestBase_Android
    {
       // Find elements by MAUI AutomationId
       // var list = driver.FindElements(MobileBy.Id("com.companyname.maui:id/CounterBtn"));
-      var button = driver.FindElement(MobileBy.Id("com.companyname.maui:id/CounterBtn"));
+      // var button = driver.FindElement(MobileBy.Id("com.companyname.maui:id/CounterBtn"));
+      var button = driver.FindUIElement("com.companyname.maui:id/CounterBtn");
       //var button = driver.FindElement(MobileBy.AccessibilityId("CounterBtn"));
 
       // Click button
