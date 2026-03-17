@@ -17,6 +17,7 @@ public static class DriverFactory
    const string APK = @"C:\Users\zepro\AppData\Local\Xamarin\Mono for Android\Archives\2026-03-16\Maui 3-16-26 4.15 PM.apkarchive\com.companyname.maui.apk";
    const string APP = @"D:\GitWare\Apps\Appium\Maui\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Maui.exe";
 
+   public const string TestResults = @"D:\GitWare\Apps\Appium\TestResults\";
 
 
    public static AndroidDriver CreateAndroidDriver()

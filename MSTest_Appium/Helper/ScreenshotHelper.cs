@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestPlatform.ObjectModel;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
@@ -13,7 +14,7 @@ public static class ScreenshotHelper
    public static void Capture(AppiumDriver driver, string testName, TestContext context)
    {
       var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-      var fileName = $"FAIL_{testName}_{timestamp}.png";
+      var fileName = Path.Join(DriverFactory.TestResults, $"FAIL_{testName}_{timestamp}.png");
 
       var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
       //screenshot.SaveAsFile(fileName, ScreenshotImageFormat.Png);
@@ -25,7 +26,7 @@ public static class ScreenshotHelper
    public static void CapturePageSource(AppiumDriver driver, string testName, TestContext context)
    {
       var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-      var fileName = $"FAIL_{testName}_{timestamp}.xml";
+      var fileName = Path.Join(DriverFactory.TestResults, $"FAIL_{testName}_{timestamp}.xml");
 
       File.WriteAllText(fileName, driver.PageSource);
       context.AddResultFile(fileName);
