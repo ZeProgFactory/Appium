@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium.Appium;
+using ZPF.UITests;
 
 namespace MauiApp.UITests;
 

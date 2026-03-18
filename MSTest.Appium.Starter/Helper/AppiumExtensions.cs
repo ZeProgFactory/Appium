@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
 
-namespace MauiApp.UITests;
+namespace ZPF.UITests;
 
 public static class AppiumExtensions
 {

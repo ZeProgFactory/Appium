@@ -1,6 +1,7 @@
 ﻿using ZPF;
+using ZPF.UITests;
 
-namespace MauiApp.UITests;
+namespace ZPF.UITests;
 
 /// <summary>
 /// Singleton instance of the ViewModel, can be used in test classes to access configuration and TestContext.

@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 
-namespace MauiApp.UITests;
+namespace ZPF.UITests;
 
 /// <summary>
 /// Handles screenshots + page source capture.

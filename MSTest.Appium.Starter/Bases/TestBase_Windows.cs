@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium.Appium.Windows;
+using ZPF.UITests;
 
-namespace MauiApp.UITests;
+namespace ZPF.UITests;
 
 /// <summary>
 /// Screenshots on failure & Page source on failure

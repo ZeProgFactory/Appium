@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MSTest.Appium.Starter\ZPF.UITest.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Update="Microsoft.Testing.Extensions.CodeCoverage" Version="18.5.2" />
   </ItemGroup>
 

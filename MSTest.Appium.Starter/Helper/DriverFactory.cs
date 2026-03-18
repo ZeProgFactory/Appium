@@ -7,7 +7,7 @@ using OpenQA.Selenium.Appium.Windows;
 using System.Diagnostics;
 using static Microsoft.ApplicationInsights.MetricDimensionNames.TelemetryContext;
 
-namespace MauiApp.UITests;
+namespace ZPF.UITests;
 
 public static class DriverFactory
 {

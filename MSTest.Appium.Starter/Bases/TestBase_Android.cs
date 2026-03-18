@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Appium.iOS;
 using OpenQA.Selenium.Appium.Windows;
+using ZPF.UITests;
 
 namespace MauiApp.UITests;
 
@@ -8,31 +8,39 @@ namespace MauiApp.UITests;
 /// Screenshots on failure & Page source on failure
 /// </summary>
 [TestClass]
-public class TestBase_iOS
+public class TestBase_Android
 {
    /// <summary>
    /// MSTest exposes the test result in TestContext.
    /// </summary>
    public TestContext TestContext { get; set; }
 
-   protected IOSDriver driver;
+   protected AndroidDriver driver;
 
 
    [TestInitialize]
    public void Setup()
    {
-      driver = DriverFactory.CreateIOSDriver();
+      driver = DriverFactory.CreateAndroidDriver();
+      UITestViewModel.Current.TestContext = TestContext;
    }
 
    [TestCleanup]
    public void Cleanup()
    {
+      var testName = TestContext.TestName;
+
       if (TestContext.CurrentTestOutcome != UnitTestOutcome.Passed)
       {
-         var testName = TestContext.TestName;
-
-         ScreenshotHelper.Capture(driver, testName, TestContext);
+         ScreenshotHelper.Capture(driver, testName, TestContext, false);
          ScreenshotHelper.CapturePageSource(driver, testName, TestContext);
+      }
+      else
+      {
+         if (UITestViewModel.Current.Config.ScreenshotOnExit)
+         {
+            ScreenshotHelper.Capture(driver, testName, TestContext);
+         }
       }
 
       driver?.Quit();
