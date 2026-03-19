@@ -8,7 +8,23 @@ namespace ZPF.UITests;
 /// </summary>
 public static class ScreenshotHelper
 {
-   public static void Capture(AppiumDriver driver, string testName, TestContext context, bool IsOK = true)
+   public static string Capture(AppiumDriver driver, TestContext context, string postfix )
+   {
+      var testName = context.TestName;
+
+      var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+      var folder = string.IsNullOrEmpty(UITestViewModel.Current.Config.TestResults) ? UITestViewModel.Current.TestContext.DeploymentDirectory : UITestViewModel.Current.Config.TestResults;
+      var fileName = Path.Join(folder, $"{testName}_{timestamp}{postfix}.png");
+
+      var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+      //screenshot.SaveAsFile(fileName, ScreenshotImageFormat.Png);
+      screenshot.SaveAsFile(fileName);
+
+      context.AddResultFile(fileName);
+      return fileName;
+   }
+
+   public static string Capture(AppiumDriver driver, string testName, TestContext context, bool IsOK = true)
    {
       var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
       var postfix = IsOK ? "" : "_FAIL";
@@ -20,9 +36,10 @@ public static class ScreenshotHelper
       screenshot.SaveAsFile(fileName);
 
       context.AddResultFile(fileName);
+      return fileName;
    }
 
-   public static void CapturePageSource(AppiumDriver driver, string testName, TestContext context)
+   public static string CapturePageSource(AppiumDriver driver, string testName, TestContext context)
    {
       var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
       var folder = string.IsNullOrEmpty(UITestViewModel.Current.Config.TestResults) ? UITestViewModel.Current.TestContext.DeploymentDirectory : UITestViewModel.Current.Config.TestResults;
@@ -31,5 +48,6 @@ public static class ScreenshotHelper
       File.WriteAllText(fileName, driver.PageSource);
 
       context.AddResultFile(fileName);
+      return fileName;
    }
 }
