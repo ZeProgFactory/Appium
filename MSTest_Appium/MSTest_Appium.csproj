@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MSTest.Appium.Starter\ZPF.UITest.csproj" />
+    <ProjectReference Include="..\ZPF.UITest\ZPF.UITest.csproj" />
   </ItemGroup>
 
   <ItemGroup>
