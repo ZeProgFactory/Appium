@@ -15,6 +15,8 @@ public class AndroidTests : TestBase_Android
       // 1)
       // UITestViewModel.Current.Config.AndroidDeviceName = "Android Emulator"; // or your device name
       // UITestViewModel.Current.Config.APK = @"C:\Path\To\Your\App.apk";
+
+      UITestViewModel.Current.Config.CompareBeforeAfter = true;
    }
 
 
