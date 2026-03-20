@@ -5,8 +5,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
-    <AssemblyVersion>1.0.2</AssemblyVersion>
-    <FileVersion>1.0.2</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\Doc\icon.png">
@@ -26,7 +24,6 @@
   </ItemGroup>
   <PropertyGroup>
     <PackageId>ZPF.UITests</PackageId>
-    <Version>1.0.0</Version>
     <Authors>MichaelE</Authors>
     <Description>ZPF.UITests is a starter nuget for MSTest and Appium. </Description>
     <PackageTags>mstest;testing;Maui;iOS;Android;MacCatalyst;WinUI;dotnet-maui;helpers</PackageTags>
@@ -42,6 +39,7 @@
     <PackageReleaseNotes>alpha</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
+    <Version>0.0.90</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Appium.WebDriver" Version="8.1.0" />
