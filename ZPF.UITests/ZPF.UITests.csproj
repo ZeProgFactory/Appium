@@ -1,35 +1,51 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-     <IsPackable>true</IsPackable>
+    <IsPackable>true</IsPackable>
+    <AssemblyVersion>1.0.2</AssemblyVersion>
+    <FileVersion>1.0.2</FileVersion>
   </PropertyGroup>
-
+  <ItemGroup>
+    <None Include="..\Doc\icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MSTest.TestAdapter" Version="4.1.0" />
     <PackageReference Include="MSTest.TestFramework" Version="4.1.0" />
   </ItemGroup>
-
   <ItemGroup>
     <None Update="ReadMe.md">
       <PackagePath>\</PackagePath>
       <Pack>True</Pack>
     </None>
   </ItemGroup>
-
-   <PropertyGroup>
-      <PackageId>MyCompany.TestHelpers</PackageId>
-      <Version>1.0.0</Version>
-      <Authors>YourName</Authors>
-      <Description>Custom MSTest helper utilities</Description>
-      <PackageTags>mstest;testing;helpers</PackageTags>
-   </PropertyGroup>
-   
-   <ItemGroup>
-      <PackageReference Include="Appium.WebDriver" Version="8.1.0" />
-      <PackageReference Include="SkiaSharp" Version="3.119.2" />
-      <PackageReference Include="ZPF_Basics" Version="2.1.1.17" />
-   </ItemGroup>
+  <PropertyGroup>
+    <PackageId>ZPF.UITests</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>MichaelE</Authors>
+    <Description>ZPF.UITests is a starter nuget for MSTest and Appium. </Description>
+    <PackageTags>mstest;testing;Maui;iOS;Android;MacCatalyst;WinUI;dotnet-maui;helpers</PackageTags>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>MSTest Appium Starter</Title>
+    <Company>MichaelE</Company>
+    <Copyright>2026 ZeProgFactory</Copyright>
+    <PackageProjectUrl>https://github.com/ZeProgFactory/ZPF.UITests</PackageProjectUrl>
+    <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/ZeProgFactory/ZPF.UITests</RepositoryUrl>
+    <PackageReleaseNotes>alpha</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Appium.WebDriver" Version="8.1.0" />
+    <PackageReference Include="SkiaSharp" Version="3.119.2" />
+    <PackageReference Include="ZPF_Basics" Version="2.1.1.17" />
+  </ItemGroup>
 </Project>
